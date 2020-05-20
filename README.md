@@ -1,27 +1,5 @@
-# dumi library
+# 雷数组件库文档
 
-## Getting Started
+## 概要
 
-Install dependencies,
-
-```bash
-$ npm i
-```
-
-Start the dev server,
-
-```bash
-$ npm start
-```
-
-Build documentation,
-
-```bash
-$ npm run docs:build
-```
-
-Build library via `father-build`,
-
-```bash
-$ npm run build
-```
+目前包括组件库(待完善)和图表组件库,记录组件库的组件和方法的基本用法。
