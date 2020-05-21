@@ -11,25 +11,4 @@
 
 ### Demo
 
-```tsx
-import React from 'react';
-import { ComBlockDemo } from 'dumi-lib';
-
-const ComBlock = () => <ComBlockDemo />;
-
-export default ComBlock;
-```
-
-```ts
-// ComBlockDemo
-import React from 'react';
-import { ComBlock } from '@td-design/charts';
-
-const ComBlockDemo = () => (
-  <ComBlock>
-    <span style={{ color: '#fff' }}>我是内容</span>
-  </ComBlock>
-);
-
-export default ComBlockDemo;
-```
+<code src="./base.tsx" >

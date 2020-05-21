@@ -1,6 +1,13 @@
 {
-  "private": true,
-  "name": "dumi-lib",
+  "name": "td-doc",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "阮旭松 <ruanxusong@thundersdata.com>",
+  "homepage": "https://github.com/thundersdata-frontend/td-doc#README",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thundersdata-frontend/td-doc.git"
+  },
   "scripts": {
     "commit": "git-cz",
     "start": "dumi dev",
@@ -8,7 +15,8 @@
     "build": "father-build",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "doc:push": "npm run docs:build && gh-pages -d dist"
   },
   "config": {
     "commitizen": {
@@ -30,10 +38,9 @@
     ]
   },
   "dependencies": {
-    "@td-design/charts": "^2.4.1",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.0.5",
-    "dumi": "^1.0.6",
+    "dumi": "^1.0.25",
     "father-build": "^1.17.2",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
@@ -42,6 +49,7 @@
   },
   "devDependencies": {
     "commitizen": "^4.1.2",
-    "cz-customizable": "^6.2.0"
+    "cz-customizable": "^6.2.0",
+    "gh-pages": "^2.2.0"
   }
 }

@@ -1,14 +1,14 @@
-## createLinePlot
+## 普通折线图
 
-### 描述
+### 图表库
 
-普通折线图
+基于 G2Plot 实现,其他配置参考 G2Plot 的 <a href="https://g2plot.antv.vision/zh/examples/line/basic/API">基础折线图</a>。
 
 ### 默认配置
 
 ```js
 const config = {
-  // 见基础配置说明
+  // 见基础配置说明-公共配置
   ...baseConfig,
   lineStyle: {
     // 折线粗细
@@ -32,7 +32,7 @@ const config = {
 };
 ```
 
-### 细分配置
+### 标准配置
 
 | 细分配置    | 功能描述                                                                           | 类型                                                                                                                                | 是否必选   |
 | ----------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------- |
@@ -43,25 +43,6 @@ const config = {
 | lineStyle   | 设置折线样式                                                                       | object:<br/> -stroke: string 折线颜色<br/> -lineWidth: number 线宽<br/> -lineDash: number 虚线显示<br/> -opacity: number 透明度     | false      |
 | point       | 配置折线上的点                                                                     | object:<br/> -visible: boolean 是否显示<br/> -shape: string 数据点形状<br/> -size: number 数据点大小<br/> -style: object 数据点样式 | false      |
 
-Demo:
+### Demo
 
-```tsx
-import React from 'react';
-import { ChartDom, createLinePlot } from '@td-design/charts';
-import { barData } from '../../../data';
-
-const ChartDomDemo = () => (
-  <ChartDom
-    title="普通折线图示例"
-    getDom={dom =>
-      createLinePlot({
-        dom,
-        data: barData,
-        config: { xField: 'date', yField: 'value', seriesField: 'type' },
-      })
-    }
-  />
-);
-
-export default ChartDomDemo;
-```
+<code src="./base.tsx">

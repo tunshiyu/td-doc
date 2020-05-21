@@ -1,12 +1,3 @@
-/*
- * @文件描述:
- * @公司: thundersdata
- * @作者: 阮旭松
- * @Date: 2020-05-14 17:30:41
- * @LastEditors: 阮旭松
- * @LastEditTime: 2020-05-19 21:52:51
- */
-
 export const barData = [
   {
     date: '2018/8/1',
@@ -235,7 +226,8 @@ export const barData = [
   },
 ];
 
-export const data2 = [
+// 区间类数据
+export const rangeData = [
   { type: '分类一', values: [76, 100] },
   { type: '分类二', values: [56, 108] },
   { type: '分类三', values: [38, 129] },

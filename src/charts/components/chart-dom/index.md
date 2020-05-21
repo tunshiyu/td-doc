@@ -9,33 +9,14 @@ group:
 
 ### 接受参数
 
-| 属性    | 说明                     | 类型                              | 必填  | 默认值 |
-| ------- | ------------------------ | --------------------------------- | ----- | ------ |
-| getDom  | 接受生成图表的方法和配置 | (dom: HTMLElement) => void        | true  |
-| title   | Card 标题                | string                            | true  |        |
-| onClick | 容器点击事件             | (event: React.MouseEvent) => void | false |        |
+| 属性    | 说明                     | 类型                                                                                                                                                                                                  | 必填  | 默认值 |
+| ------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ------ |
+| getDom  | 接受生成图表的方法和配置 | (dom: HTMLElement) => create 图表方法(<a href="https://thundersdata-frontend.github.io/td-doc/#/charts/utils/base-config?anchor=%E5%9F%BA%E7%A1%80%E5%85%AC%E5%85%B1%E9%85%8D%E7%BD%AE">配置说明</a>) | true  |
+| title   | Card 标题                | string                                                                                                                                                                                                | true  |        |
+| onClick | 容器点击事件             | (event: React.MouseEvent) => void                                                                                                                                                                     | false |        |
 
 ### Demo
 
-```tsx
-import React from 'react';
-import { ChartDom, createLinePlot } from '@td-design/charts';
-import { barData } from '../../../data';
-
-const ChartDomDemo = () => (
-  <ChartDom
-    title="普通折线图示例"
-    getDom={dom =>
-      createLinePlot({
-        dom,
-        data: barData,
-        config: { xField: 'date', yField: 'value', seriesField: 'type' },
-      })
-    }
-  />
-);
-
-export default ChartDomDemo;
-```
+<code src="./base.tsx" >
 
 以上为使用 `ChartDom` 生成一个普通折线图的使用方法，`createLinePlot` 为生成折线图的方法，后面会介绍。

@@ -5,11 +5,23 @@ group:
 
 ## 基础配置说明
 
-&emsp;&emsp;本文档只列举部分常用配置，默认配置是指在 `@td-design/charts` 图表组件库中默认设置的值。如果需要详细配置项请访问 <a href="https://g2.antv.vision/zh/examples">G2</a> 或 <a href="https://g2plot.antv.vision/zh/examples/gallery">G2Plot</a> 官网。
+## 配置说明
+
+- 默认配置：是指在 `@td-design/charts` 图表组件库中默认设置的值。
+- 组件库内部配置：是指在图表组件库中为了满足特定的需求而自定义的配置，偏定制化。
+- 标准配置：为 G2Plot 或 G2 官网的图表配置属性，本文档只列举部分常用配置，如果需要详细配置项请访问 <a href="https://g2.antv.vision/zh/examples">G2</a> 或 <a href="https://g2plot.antv.vision/zh/examples/gallery">G2Plot</a> 官网。
+
+### 函数方法说明
+
+&emsp;&emsp;在 ChartPlot 和 ChartDom 属性的 getDom 方法中可使用各种 create 方法，create 方法需要传入参数 { dom, data, config }。
+
+| 细分配置 | 功能描述               | 类型                                   | 是否必选 |
+| -------- | ---------------------- | -------------------------------------- | -------- |
+| dom      | 从函数参数里传入的 dom | HTMLElement                            | true     |
+| data     | 图表数据源             | DataItem[]\(混合图表中为 DataItem[][]) | true     |
+| config   | 自定义的配置项         | T(由具体图表方法决定)                  | false    |
 
 ### 基础公共配置
-
-&emsp;&emsp;在 getDom 属性中可使用各种 create 方法，create 方法可传入参数 { dom, data, config }，dom 是从函数参数里传入的 dom ，data 是图表数据，config 是具体的配置项。
 
 柱线图 config 中的基础配置项如下：
 
@@ -94,7 +106,7 @@ export const baseComboConfig = {
 };
 ```
 
-#### padding
+### padding
 
 <b>可选</b>，<i>number | number[] | string</i>
 
@@ -102,7 +114,7 @@ export const baseComboConfig = {
 
 默认配置：`[20, 50, 70, 50]`
 
-#### xAxis
+### xAxis
 
 <b>可选</b>，<i>object</i>
 
@@ -140,7 +152,7 @@ export const baseXAxis = {
 | label    | object  | 坐标轴标签<br/> - visible: boolean 是否可见<br/> - formatter: function 坐标轴标签格式化<br/> - suffix: string 后缀<br/> - precision：number 标签精度，如配置为 2，则格式化为 2 位小数<br/> - mask: string 为日期文本添加格式化遮罩，当坐标轴 type 为 time 时生效<br/> - offsetX: number 位置在 x 方向上的偏移量<br/> - offsetY：number 位置在 y 方向上的偏移量<br/> - style：object 样式<br/> -autoHide: boolean 是否自动隐藏<br/> - autoRotate: boolean 是否自动旋转<br/> |
 | title    | object  | 图表标题，目前 G2Plot 的 title 无法配置 position，只能显示在轴中间，不符合设计规范，不建议使用                                                                                                                                                                                                                                                                                                                                                                             |
 
-#### yAxis
+### yAxis
 
 <b>可选</b>，<i>object</i>
 
@@ -180,7 +192,7 @@ export const baseYAxis = {
 };
 ```
 
-#### legend
+### legend
 
 <b>可选</b>，<i>object</i>
 
@@ -205,3 +217,25 @@ export const baseLegend = {
 | position | string  | 位置，支持 12 方位布局<br/>top-left, top-center,top-right<br/>bottom-left,bottom-center,bottom-right<br/>left-top,left-center,left-bottom<br/>right-top,right-center,right-bottom               |
 | text     | object  | 图例文本 <br/> - style: object 配置图例文本样式 <br/> - formatter:(text,cfg)=>string 格式化图例文本                                                                                             |
 | marker   | object  | 图例 marker <br/> - symbol: string marker 符号，默认为 'circle'。可选类型： <br/> circle,square 等 <br/> - style: object marker 样式，其中 r 配置 marker 的大小，其余样式参数参考绘图属性文档。 |
+
+### tooltip
+
+<b>可选</b>，<i>object</i>
+
+功能描述：信息提示框
+
+默认配置：
+
+```json
+{
+  "visible": true,
+  "offset": 20
+}
+```
+
+| 细分配置  | 类型    | 功能描述                                                                                    |
+| --------- | ------- | ------------------------------------------------------------------------------------------- |
+| visible   | boolean | 是否可见                                                                                    |
+| offset    | number  | 距离鼠标位置偏移值                                                                          |
+| domStyles | object  | 配置 tooltip 样式                                                                           |
+| formatter | object  | 对 tooltip items 进行格式化，入参为 tooltip fields 对应数值，出参为格式为{name:'a',value:1} |
