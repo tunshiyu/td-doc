@@ -10,7 +10,7 @@ https://thundersdata-frontend.github.io/td-doc
 
 ## 主要组成
 
-- 雷数科技组件库(待完善)
+- 组件库(待完善)
 - 图表组件库
 
 ## 操作指南
