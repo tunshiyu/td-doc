@@ -59,7 +59,7 @@ plugins: [
 - createLiquidPlot (水波图)
 - createDonutRosePlot (玫瑰图)
 - createCustomBarPlot (基础条形图)
-- createStackRosePlot (南丁格尔玫瑰图)
+- createStackRosePlot (堆叠玫瑰图)
 - createRadarPlot (雷达图)
 - createStackAreaPlot (面积图)
 - createScatterPlot (单象限散点图)
