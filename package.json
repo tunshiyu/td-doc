@@ -38,6 +38,7 @@
     ]
   },
   "dependencies": {
+    "@td-design/charts": "^2.4.1",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.0.5",
     "dumi": "^1.0.25",
