@@ -638,3 +638,66 @@ export const mapData = {
     ],
   },
 };
+
+// 物料合格率统计
+export const standardsData = [93.5, 100, 99.5];
+export const scoreData = [
+  {
+    name: '包材（标准：93.5）',
+    value: '93.5',
+    unit: '%',
+  },
+  {
+    name: '原材料（标准：100）',
+    value: '89.95',
+    unit: '%',
+  },
+  {
+    name: '中药材（标准：99.5）',
+    value: '60',
+    unit: '%',
+  },
+  {
+    name: '中药材2',
+    value: '40',
+    unit: '%',
+  },
+  {
+    name: '中药材3',
+    value: '20',
+    unit: '%',
+  },
+];
+
+export const warnData = [
+  {
+    typeDesc: '近效期',
+    content: '金源药店库存中20180206F批号血塞通滴丸有效期剩半年',
+    datatime: '2019/01/14',
+  },
+  {
+    typeDesc: '库存断货',
+    content: '库存断货库存断货库存断货库存断货库存断货',
+    datatime: '2019/01/14',
+  },
+  {
+    typeDesc: '销售突增',
+    content: '销售突增销售突增销售突增销售突增销售突增销售突增',
+    datatime: '2019/01/14',
+  },
+  {
+    typeDesc: '超期库存',
+    content: '超期库存超期库存超期库存超期库存超期库存超期库存',
+    datatime: '2019/01/14',
+  },
+  {
+    typeDesc: '跨省销售',
+    content: '跨省销售跨省销售跨省销售跨省销售',
+    datatime: '2019/01/14',
+  },
+  {
+    typeDesc: '超期库存',
+    content: '超期库存超期库存超期库存超期库存超期库存超期库存',
+    datatime: '2019/01/14',
+  },
+];
