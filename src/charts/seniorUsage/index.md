@@ -5,7 +5,7 @@ group:
 
 ## 互动状态管理
 
-状态管理类似于 react 中的状态管理，在 bindStateManager 配置第二个参数 的 `setState` 属性中可以定义各种触发事件，其中的`event`是触发事件，state 是触发回调，返回的是例如 `{ name: 'type', exp: origin.type }` 格式的 json，name 是 state 中维护的状态名，exp 是这个状态的值。setState 以后，在 `onStateChange` 中就是各种监听的状态，一旦状态改变就会触发`callback`回调。`callback` 的第一个参数是改变后的状态信息，第二个参数是一个 Plot 对象，有一些基本的`setSelected`(设置选中项的 style),`setDefault`(设置其他默认显示 style)等方法。
+G2Plot 类图表可以使用`bindStateManager` 进行状态管理，状态管理类似于 react 中的状态管理，在 `bindStateManager` 配置第二个参数 的 `setState` 属性中可以定义各种触发事件，其中的`event`是触发事件，state 是触发回调，返回的是例如 `{ name: 'type', exp: origin.type }` 格式的 json，name 是 state 中维护的状态名，exp 是这个状态的值。setState 以后，在 `onStateChange` 中就是各种监听的状态，一旦状态改变就会触发`callback`回调。`callback` 的第一个参数是改变后的状态信息，第二个参数是一个 Plot 对象，有一些基本的`setSelected`(设置选中项的 style),`setDefault`(设置其他默认显示 style)等方法。
 
 ### 触发高亮
 
