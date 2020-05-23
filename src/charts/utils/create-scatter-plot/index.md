@@ -34,7 +34,7 @@ const config = {
     tooltip: {
       formatter: (date, type) => {
         const selectedValue = data.filter(
-          item => '' + item[xField] === '' + date && '' + item[yField] === '' + type,
+          item => `${item[xField]}` === `${date}` && `${item[yField]}` === `${type}`,
         )[0];
         const value =
           selectedValue && selectedValue[sizeField] ? (selectedValue[sizeField] as number) : 0;
