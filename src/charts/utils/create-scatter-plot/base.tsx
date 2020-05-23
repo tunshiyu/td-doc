@@ -14,7 +14,7 @@ const ScatterPlotDemo = () => (
           xField: 'date',
           yField: 'type',
           sizeField: 'value',
-          yPrefixName: '条件',
+          yNameFormatter: data => `条件${data}`,
         },
       })
     }
