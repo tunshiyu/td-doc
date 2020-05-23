@@ -2,7 +2,7 @@ import React from 'react';
 import { ChartDom, createDonutPlot } from '@td-design/charts';
 import { pieData } from '../../../data';
 
-const BaseDonutDemo = () => (
+const highlightDisabledDemo = () => (
   <ChartDom
     title="环形图"
     getDom={(dom: HTMLElement) =>
@@ -12,11 +12,11 @@ const BaseDonutDemo = () => (
         config: {
           angleField: 'value',
           colorField: 'type',
-          bordered: false,
+          highlightEnabled: false,
         },
       })
     }
   />
 );
 
-export default BaseDonutDemo;
+export default highlightDisabledDemo;

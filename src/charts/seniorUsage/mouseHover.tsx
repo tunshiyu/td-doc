@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChartDom, createDonutPlot } from '@td-design/charts';
-import { pieData } from '../../../data';
+import { pieData } from '../../data';
 
 const BaseDonutDemo = () => (
   <ChartDom
@@ -12,7 +12,6 @@ const BaseDonutDemo = () => (
         config: {
           angleField: 'value',
           colorField: 'type',
-          bordered: false,
         },
       })
     }

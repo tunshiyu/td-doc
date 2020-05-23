@@ -14,7 +14,9 @@ const config = {
   yField: ['value', 'count'],
   columnGroupField: 'type',
   columnConfig: {
-    columnSize: 16,
+    // 柱子宽度
+    columnSize: 24,
+    // 柱子颜色
     color: ['#10B1FA', '#42CF35'],
   },
   yAxis: {

@@ -5,7 +5,7 @@ import { barData } from '../../../data';
 const BaseStackColumnDemo = () => (
   <ChartDom
     title="堆叠柱状图示例"
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createStackColumnPlot({
         dom,
         data: barData,

@@ -6,7 +6,7 @@ const BaseCustomGroupedBarDemo = () => (
   <ChartDom
     title="分组条形图示例"
     style={{ width: '560px', height: '242px' }}
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createCustomGroupedBarPlot({
         dom,
         data: groupedBarData,

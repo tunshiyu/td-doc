@@ -5,7 +5,7 @@ import { barData } from '../../../data';
 const ChartDomDemo = () => (
   <ChartDom
     title="普通折线图示例"
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createLinePlot({
         dom,
         data: barData,

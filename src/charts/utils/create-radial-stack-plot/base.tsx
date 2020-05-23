@@ -6,7 +6,7 @@ const BaseRadialStackDemo = () => (
   <ChartDom
     title="极坐标下的柱状图"
     style={{ width: '320px', height: '290px' }}
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createRadialStackPlot({
         dom,
         data: radialStackData,

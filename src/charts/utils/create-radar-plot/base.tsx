@@ -6,7 +6,7 @@ const BaseRadarDemo = () => (
   <ChartDom
     title="雷达图"
     style={{ width: '440px', height: '290px' }}
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createRadarPlot({
         dom,
         data: radarData,

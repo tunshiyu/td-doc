@@ -6,11 +6,21 @@
 
 ### 注意事项 📌
 
-因为 G2Plot 的气泡图的数据源要求 y 轴的数据必须为数字，所以用 yPrefixName 或 mappingName 来修改 y 轴 label。
+因为 G2Plot 的气泡图的数据源要求 y 轴的数据必须为数字，所以用 yNameFormatter 来修改 y 轴 label。
 
 ### 默认配置
 
 ```js
+// 获得日期字符串
+const getDateString = (dateString: string) => {
+  if (dateString.length === 8) {
+    return `${dateString.slice(0, 4)}/${dateString.slice(4, 6)}/${dateString.slice(6, 8)}`;
+  }
+  if (dateString.length === 6) {
+    return `${dateString.slice(0, 4)}/${dateString.slice(4, 6)}`;
+  }
+  return dateString;
+};
 const config = {
   // 见基础配置说明-公共配置
   ...basePieConfig,
@@ -24,7 +34,7 @@ const config = {
     tooltip: {
       formatter: (date, type) => {
         const selectedValue = data.filter(
-          item => '' + item[xField] === '' + date && '' + item[yField] === '' + type,
+          item => `${item[xField]}` === `${date}` && `${item[yField]}` === `${type}`,
         )[0];
         const value =
           selectedValue && selectedValue[sizeField] ? (selectedValue[sizeField] as number) : 0;
@@ -90,7 +100,11 @@ const config = {
             axisNumber <= maxYData &&
             axisNumber >= minYData
           ) {
-            return yPrefixName + arg;
+            let formateArg = arg;
+            if (yNameFormatter) {
+              formateArg = yNameFormatter[arg];
+            }
+            return formateArg;
           }
           return '';
         },
@@ -104,11 +118,9 @@ const config = {
 
 ### 组件库内部配置
 
-| 细分配置    | 功能描述                             | 类型                    | 是否必选 | 默认值 |
-| ----------- | ------------------------------------ | ----------------------- | -------- | ------ |
-| yPrefixName | y 轴字段前缀                         | string                  | false    | ''     |
-| ySuffixName | y 轴字段后缀                         | string                  | false    | ''     |
-| mappingName | 映射对象，自定义修改 y 轴 label 名称 | {[name: number]: string | number}  | false  |  |
+| 细分配置       | 功能描述                      | 类型                      | 是否必选 | 默认值 |
+| -------------- | ----------------------------- | ------------------------- | -------- | ------ |
+| yNameFormatter | 格式化 y 轴字段的 format 函数 | (name: number) => string; | false    |        |
 
 ### 标准配置
 
@@ -124,18 +136,6 @@ const config = {
 
 ### Demo
 
-- 基础用法
+- 基础用法，使用 yNameFormatter 来格式化 label
 
 <code src="./base.tsx">
-
-- 修改 yPrefixName 为"产品"
-
-<code src="./yPrefixName.tsx">
-
-- 修改 mappingName
-
-<code src="./mappingName.tsx">
-
-- 结合 mappingName，yPrefixName，ySuffixName 用法
-
-<code src="./mix.tsx">

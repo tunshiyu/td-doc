@@ -5,11 +5,15 @@ import { barData } from '../../../data';
 const LinePlotDemo = () => (
   <ChartDom
     title="普通折线图示例"
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createLinePlot({
         dom,
         data: barData,
-        config: { xField: 'date', yField: 'value', seriesField: 'type' },
+        config: {
+          xField: 'date',
+          yField: 'value',
+          seriesField: 'type',
+        },
       })
     }
   />

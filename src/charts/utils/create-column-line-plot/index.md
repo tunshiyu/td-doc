@@ -13,7 +13,9 @@ const config = {
   xField: 'time',
   yField: ['value', 'count'],
   columnConfig: {
-    columnSize: 20,
+    // 柱子宽度
+    columnSize: 24,
+    // 柱子颜色
     color: '#10B1FA',
   },
   yAxis: {
@@ -35,14 +37,15 @@ isSingleAxis 为 true (单轴)时的配置
 ```json
 {
   "yAxis": {
-    // 见基础配置说明-公共配置
-    ...baseComboYAxis,
     // 计算得数据的最大值
     max,
     "min": 0,
     "rightConfig": {
+      // 见基础配置说明-公共配置
+      ...baseComboYAxis,
       "visible": false
     }
+    "leftConfig": baseComboYAxis,
   }
 }
 ```

@@ -5,7 +5,7 @@ import { barData } from '../../../data';
 const BaseWaterfallDemo = () => (
   <ChartDom
     title="瀑布图"
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createWaterfallPlot({
         dom,
         data: barData,

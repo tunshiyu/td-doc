@@ -5,7 +5,7 @@ import { barData } from '../../../data';
 const StackAreaPlotDemo = () => (
   <ChartDom
     title="面积图示例"
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createStackAreaPlot({
         dom,
         data: barData,

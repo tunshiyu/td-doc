@@ -5,7 +5,7 @@ import { pieData } from '../../../data';
 const BaseDonutDemo = () => (
   <ChartDom
     title="环形图"
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createDonutPlot({
         dom,
         data: pieData,
