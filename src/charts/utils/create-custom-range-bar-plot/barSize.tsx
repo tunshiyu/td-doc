@@ -9,10 +9,11 @@ const CustomBarPlotDemo = () => (
     getDom={(dom: HTMLElement) =>
       createCustomRangeBarPlot({
         dom,
-        data: rangeData,
+        data: rangeData.slice(0, 4),
         config: {
           xField: 'type',
           yField: 'values',
+          barSize: 20,
         },
       })
     }

@@ -5,7 +5,8 @@ import { scatterData } from '../../../data';
 const ScatterPlotDemo = () => (
   <ChartDom
     title="单象限散点图示例"
-    getDom={dom =>
+    style={{ width: '500px', height: '235px' }}
+    getDom={(dom: HTMLElement) =>
       createScatterPlot({
         dom,
         data: scatterData,

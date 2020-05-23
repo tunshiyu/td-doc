@@ -5,7 +5,8 @@ import { pieData } from '../../../data';
 const CustomBarPlotDemo = () => (
   <ChartDom
     title="基础条形图示例"
-    getDom={dom =>
+    style={{ width: '440px', height: '290px' }}
+    getDom={(dom: HTMLElement) =>
       createCustomBarPlot({
         dom,
         data: pieData,

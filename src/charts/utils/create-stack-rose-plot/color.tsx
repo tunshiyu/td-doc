@@ -6,7 +6,7 @@ const BaseStackDemo = () => (
   <ChartDom
     title="堆叠玫瑰图"
     style={{ width: '440px', height: '290px' }}
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createStackRosePlot({
         dom,
         data: roseData,

@@ -5,7 +5,7 @@ const BaseLiquidDemo = () => (
   <ChartDom
     title="注水图"
     style={{ width: '320px', height: '290px' }}
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createLiquidPlot({
         dom,
         data: 50,

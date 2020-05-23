@@ -5,7 +5,7 @@ import { rangeData } from '../../../data';
 const BaseRangeColumnDemo = () => (
   <ChartDom
     title="区间柱状图示例"
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createRangeColumnPlot({
         dom,
         data: rangeData,

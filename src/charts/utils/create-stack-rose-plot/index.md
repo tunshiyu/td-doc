@@ -34,11 +34,20 @@ const config = {
     marker: baseMarker,
   },
   tooltip: {
+    // 显示其他数据
+    shared: true,
     custom: {
       onChange: (_dom, cfg) => {
         const { items } = cfg;
-        if (items && items.length > 0 && items[0].data?.type === '空') {
-          items.splice(0, 1);
+        if (items) {
+          items.forEach((item, idx) => {
+            if (
+              item.data?.type === '空' ||
+              /^[ ]*$/.test(item.data?.category)
+            ) {
+              items.splice(idx, 1);
+            }
+          });
         }
       },
     },

@@ -6,7 +6,7 @@ const BaseDonutRoseDemo = () => (
   <ChartDom
     title="玫瑰图"
     style={{ width: '440px', height: '290px' }}
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createDonutRosePlot({
         dom,
         data: pieData,

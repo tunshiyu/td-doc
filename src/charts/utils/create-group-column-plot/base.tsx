@@ -5,7 +5,7 @@ import { barData } from '../../../data';
 const GroupColumnPlotDemo = () => (
   <ChartDom
     title="分组柱状图示例"
-    getDom={dom =>
+    getDom={(dom: HTMLElement) =>
       createGroupColumnPlot({
         dom,
         data: barData,
