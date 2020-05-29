@@ -1,5 +1,10 @@
 import React from 'react';
-import { ColumnsProps, CustomTable } from '@td-design/charts';
+import {
+  ColumnsProps,
+  CustomTable,
+  ComBlock,
+  ComCard,
+} from '@td-design/charts';
 import { warnData } from '../../../data';
 
 const CustomTableDemo = () => {
@@ -9,7 +14,17 @@ const CustomTableDemo = () => {
     { title: '详细内容', dataIndex: 'content', key: 'content', width: 56 },
   ];
 
-  return <CustomTable columns={columns} dataSource={warnData} enabledScroll />;
+  return (
+    <ComBlock>
+      <ComCard
+        title="滚动table"
+        headerStyle={{ height: 18 }}
+        titleStyle={{ fontSize: 16 }}
+      >
+        <CustomTable columns={columns} dataSource={warnData} enabledScroll />
+      </ComCard>
+    </ComBlock>
+  );
 };
 
 export default CustomTableDemo;
